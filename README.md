@@ -6,9 +6,22 @@
 
 The Model Context Protocol (MCP) provides a standardized interface that enables AI agents to interact seamlessly with external services. In this post, we’ll demonstrate how to build an MCP server that integrates with Shutterstock — my favorite platform for high-quality licensed images, videos, music, and creative tools — using their robust API. We’ll then show how to expose these rich media search capabilities to agents developed with Strands Agents, AWS’s code-first framework for building production-ready AI agents. By orchestrating multiple agents, we’ll enable them to access the National Weather Service (NWS) API, intelligently select contextually relevant photos based on current weather conditions, and deliver results that showcase the power of reasoning and context-aware automation.
 
-JavaScript MCP Servers are based on [https://github.com/lucianoayres/mcp-server-node](https://github.com/lucianoayres/mcp-server-node).
+JavaScript/Node.js MCP Servers based on: [https://github.com/lucianoayres/mcp-server-node](https://github.com/lucianoayres/mcp-server-node).
 
 ## Prerequisites
+
+* Git distributed version control system
+* Node.js v22.16.01 LTS or newer (MCP servers)
+* npm, Yarn, or other Node.js package manager
+* Python 3.13.x (Strands Agents)
+* pip, Poetry, or another Python package manager
+* AWS Account (for access to Amazon Bedrock generative AI models; other model providers are also supported)
+* Free Shutterstock Test Account and Token (Register at Shutterstock Developers)
+* Optional: Amazon Q Developer CLI for last section of post
+
+## Installation
+
+1. **Clone Repository and Install Packages**
 
 ```bash
 npm install -g corepack # if using yarn
@@ -19,9 +32,7 @@ cd aws-strands-agents-mcp-demo
 yarn install
 ```
 
-## Installation
-
-1. **Start MCP Agents**
+2. **Start MCP Servers**
 
 ```bash
 # terminal window 1: STDIO transport
@@ -35,7 +46,7 @@ node mcp-server.js
 node mcp-server-remote.js
 ```
 
-2. **Install Strands Agents**
+3. **Install Strands Agents**
 
 ```bash
 python -m pip install virtualenv -Uqqq
@@ -46,7 +57,7 @@ python -m pip install pip -Uqqq
 python -m pip install -r requirements.txt -Uqqq
 ```
 
-3. **Start Strands Agents**
+4. **Start Strands Agents**
 
 ```bash
 export API_KEY=abc-1234567890
