@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "remote-mcp-server": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:3000/mcp",
+        "--transport",
+        "http-only",
+        "--allow-http"
+      ]
+    }
+  }
+}

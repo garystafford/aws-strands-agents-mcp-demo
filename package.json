@@ -1,0 +1,13 @@
+{
+  "name": "mcp-server-node",
+  "packageManager": "yarn@4.9.1",
+  "version": "1.0.0",
+  "description": "Two Node.js servers to demonstrate Model Context Protocol (MCP)",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "express": "^5.1.0",
+    "shutterstock-api": "^1.2.0",
+    "zod": "^3.25.42"
+  }
+}
