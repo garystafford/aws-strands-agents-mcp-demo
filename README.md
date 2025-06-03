@@ -1,10 +1,10 @@
-# AWS Strands Agents: Building and Connecting Your First Model Context Protocol (MCP) Server
+# AWS Strands Agents: Building and Connecting Your First Model Context Protocol (MCP) Server
 
 ## Overview
 
-**Learn to build an MCP server that searches for stock photography based on your current weather conditions using third-party APIs, and connect it to Strands Agents.**
+**Deploy an MCP server that searches for stock photography based on your current location and conditions using third-party APIs, and orchestrate it with Strands Agents and the Amazon Q Developer CLI.**
 
-The Model Context Protocol (MCP) enables AI agents to interact with external services in a standardized way. In this post, we'll build an MCP server that connects to Shutterstock's API to search for photos and then expose those capabilities to agents built with Strands Agents - a code-first framework from AWS for building production-ready AI agents. Using multi-agent orchestration, these agents will leverage the National Weather Service (NWS) API to find appropriate photos for you based on your current weather conditions.
+The Model Context Protocol (MCP) provides a standardized interface that enables AI agents to interact seamlessly with external services. In this post, we’ll demonstrate how to build an MCP server that integrates with Shutterstock — my favorite platform for high-quality licensed images, videos, music, and creative tools — using their robust API. We’ll then show how to expose these rich media search capabilities to agents developed with Strands Agents, AWS’s code-first framework for building production-ready AI agents. By orchestrating multiple agents, we’ll enable them to access the National Weather Service (NWS) API, intelligently select contextually relevant photos based on current weather conditions, and deliver results that showcase the power of reasoning and context-aware automation.
 
 JavaScript MCP Servers are based on [https://github.com/lucianoayres/mcp-server-node](https://github.com/lucianoayres/mcp-server-node).
 
