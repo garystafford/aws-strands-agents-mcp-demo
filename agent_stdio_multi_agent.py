@@ -5,13 +5,13 @@ It also uses the 'Agents as Tools' architectural pattern to retrieve weather inf
 It also uses a Bedrock model for natural language processing and a conversation manager to handle interactions.
 
 Author: Gary Stafford
-Date: 2025-06-01
+Date: 2025-06-03
 """
 
 import os
 from mcp import stdio_client, StdioServerParameters
 from strands import Agent, tool
-from strands_tools import http_request
+from strands_tools import http_request, shell
 from strands.agent.conversation_manager import SlidingWindowConversationManager
 from strands.models import BedrockModel
 from strands.tools.mcp.mcp_client import MCPClient
@@ -115,7 +115,12 @@ with stdio_mcp_client:
     # Create an agent with these tools
     orchestrator_agent = Agent(
         system_prompt=MAIN_SYSTEM_PROMPT,
-        tools=tools + [weather_assistant],  # Add the weather assistant tool
+        tools=[
+            *tools,
+            weather_assistant,
+            http_request,
+            shell,
+        ],  # Combine tools from MCP server and local tools
         model=bedrock_model,
         conversation_manager=conversation_manager,
     )
